@@ -103,7 +103,7 @@ export const Upload = (): JSX.Element => {
           </S.LinkContainer>
         )}
       </S.RightSection>
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <Modal isOpen={isOpen} onClose={() => null}>
         <AddUserForm onChange={handleChange} student={student} />
         <FormFooter
           disabled={isFormDisabled}
