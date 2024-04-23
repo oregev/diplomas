@@ -15,11 +15,18 @@ export const EmailForm = ({ email, onUpdate }: EmailFormProps): JSX.Element => (
   <S.FormContainer>
     <S.InputContainer>
       <Label content="subject" htmlFor="subject" />
-      <Input id="subject" name="subject" value={email.subject} valid onChange={onUpdate} />
+      <Input
+        id="subject"
+        name="subject"
+        width="500px"
+        value={email.subject}
+        valid
+        onChange={onUpdate}
+      />
     </S.InputContainer>
     <S.InputContainer>
       <Label content="body" htmlFor="body" />
-      <Input id="body" name="body" value={email.body} valid onChange={onUpdate} />
+      <Input id="body" name="body" width="500px" value={email.body} valid onChange={onUpdate} />
     </S.InputContainer>
   </S.FormContainer>
 );

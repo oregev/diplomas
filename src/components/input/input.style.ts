@@ -9,6 +9,8 @@ export const Input = styled.input<{ $width: string; $height: string; $valid: boo
   background: ${({ theme }) => theme.background};
   outline: none;
 
+  direction: rtl;
+
   &::placeholder {
     color: ${({ theme }) => theme.label};
   }

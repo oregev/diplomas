@@ -9,7 +9,13 @@ import { NoData } from "features/noData";
 import { Button } from "components/button";
 import { EmailForm } from "./emailForm";
 import { handleDownloadPdf, handleSendEmail } from "./share.utils";
-import { BODY_PARAM_ID, BODY_PREFIX, SUBJECT_PARAM_ID, SUBJECT_PREFIX } from "./share.config";
+import {
+  BODY_PARAM_ID,
+  BODY_POSTFIX,
+  BODY_PREFIX,
+  SUBJECT_PARAM_ID,
+  SUBJECT_PREFIX,
+} from "./share.config";
 import * as S from "./share.style";
 
 export const Share = (): JSX.Element => {
@@ -27,13 +33,14 @@ export const Share = (): JSX.Element => {
     ? format(new Date(template?.start ?? ""), "MMMM, yyyy", { locale: he })
     : "";
   const subject = `${SUBJECT_PREFIX} ${template?.courseName} ${date} - ${template?.lecturer}`;
+  const body = BODY_PREFIX + template?.courseName + BODY_POSTFIX + template?.lecturer;
 
   const [email, setEmail] = useState<{
     subject: string;
     body: string;
   }>({
     subject,
-    body: BODY_PREFIX,
+    body,
   });
 
   const handleEmailUpdate = (event: ChangeEvent<HTMLInputElement>): void => {
