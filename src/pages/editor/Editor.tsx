@@ -21,7 +21,6 @@ export const Editor = (): JSX.Element => {
   const { getTemplate, updateTemplate } = useTemplates();
   const { courseId: cid, templateId: tid } = useParams();
   const { setSelectedTemplate } = useContext(AppContext);
-  const [isGenerated, setIsGenerated] = useState<boolean>(false);
   const [isConfirmOpen, setIsConfirmOpen] = useState<boolean>(false);
   const [courseId, setCourseId] = useState<string | null>(cid ?? null);
   const [content, setContent] = useState<State>(initialState);
@@ -81,13 +80,8 @@ export const Editor = (): JSX.Element => {
     if (courseId && !template) {
       const randomId = crypto.randomUUID();
       createTemplate(courseId, { id: randomId, ...content });
-      setIsGenerated((prev) => !prev);
-
-      setTimeout(() => {
-        setIsGenerated((prev) => !prev);
-        setCourseId("");
-        resetContent();
-      }, 1500);
+      setCourseId("");
+      resetContent();
 
       if (content.use) {
         setSelectedTemplate({ course: courseId, id: randomId });
@@ -100,11 +94,6 @@ export const Editor = (): JSX.Element => {
     setIsConfirmOpen(false);
     if (courseId && template?.id) {
       updateTemplate(courseId, template?.id, content);
-      setIsGenerated((prev) => !prev);
-
-      setTimeout(() => {
-        setIsGenerated((prev) => !prev);
-      }, 1500);
     }
   };
 
@@ -164,7 +153,6 @@ export const Editor = (): JSX.Element => {
             </S.UploadContainer>
             <FormFooter
               disabled={getIsDisabled()}
-              generated={isGenerated}
               isNew={!template}
               onClear={resetContent}
               onGenerate={() => setIsConfirmOpen(true)}
