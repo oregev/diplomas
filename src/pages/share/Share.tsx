@@ -59,7 +59,7 @@ export const Share = (): JSX.Element => {
                       students,
                       email: {
                         subject: `${SUBJECT_PARAM_ID}${email.subject}`,
-                        body: `${BODY_PARAM_ID}<div>${email.body}</div>`,
+                        body: `${BODY_PARAM_ID}${encodeURIComponent(email.body)}`,
                       },
                     })
                   }
