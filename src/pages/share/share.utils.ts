@@ -1,9 +1,6 @@
 import { pdf } from "@react-pdf/renderer";
 import { IStudent } from "AppContext";
-import { format } from "date-fns";
-import { he } from "date-fns/locale/he";
-import { DiplomaMetaData } from "types/common.types";
-import { BASE, BODY, SUBJECT_PREFIX } from "./share.config";
+import { BASE } from "./share.config";
 
 export const handleDownloadPdf = async (
   diplomas: JSX.Element[],
@@ -25,17 +22,24 @@ export const handleDownloadPdf = async (
   }
 };
 
-const getHref = (student: IStudent, template: DiplomaMetaData) => {
+const getHref = (student: IStudent, subject: string, body: string) => {
   const email = `${BASE}${student.email}`;
-  const date = format(new Date(template?.start ?? ""), "MMM, yyyy", { locale: he });
-  const subject = `${SUBJECT_PREFIX}${template?.courseName} ${date} - ${template?.lecturer}`;
-  const params = `${subject}&${BODY}`;
+  const params = `${subject}&${body}`;
   return `${email}?${params}`;
 };
 
-export const handleSendEmail = (students: IStudent[], template: DiplomaMetaData): void => {
+export const handleSendEmail = ({
+  students,
+  email,
+}: {
+  students: IStudent[];
+  email: {
+    subject: string;
+    body: string;
+  };
+}): void => {
   students.forEach((student) => {
-    const href = getHref(student, template);
+    const href = getHref(student, email.subject, email.body);
     window.open(href);
   });
 };

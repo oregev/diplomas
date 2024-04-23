@@ -1,12 +1,15 @@
-import { useContext } from "react";
+import { ChangeEvent, useContext, useState } from "react";
+import { format } from "date-fns";
+import { he } from "date-fns/locale/he";
 import { AppContext } from "AppContext";
 import { useTemplates } from "api/useTemplates";
 import { AlertIcon } from "assets/icons";
 import { PdfDiploma } from "features/pdfDiploma";
 import { NoData } from "features/noData";
 import { Button } from "components/button";
-// import { EmailForm } from "./emailForm";
+import { EmailForm } from "./emailForm";
 import { handleDownloadPdf, handleSendEmail } from "./share.utils";
+import { BODY_PARAM_ID, BODY_PREFIX, SUBJECT_PARAM_ID, SUBJECT_PREFIX } from "./share.config";
 import * as S from "./share.style";
 
 export const Share = (): JSX.Element => {
@@ -20,13 +23,28 @@ export const Share = (): JSX.Element => {
       ))
     : [];
 
+  const date = format(new Date(template?.start ?? ""), "MMMM, yyyy", { locale: he });
+  const subject = `${SUBJECT_PREFIX} ${template?.courseName} ${date} - ${template?.lecturer}`;
+
+  const [email, setEmail] = useState<{
+    subject: string;
+    body: string;
+  }>({
+    subject,
+    body: BODY_PREFIX,
+  });
+
+  const handleEmailUpdate = (event: ChangeEvent<HTMLInputElement>): void => {
+    setEmail((prev) => ({ ...prev, [event.target.name]: event.target.value }));
+  };
+
   return (
     <S.Container>
       {template && students.length > 0 ? (
         <>
           <S.LeftSection>
             <S.Title>Email</S.Title>
-
+            <EmailForm email={email} onUpdate={handleEmailUpdate} />
             {template && students.length > 0 && (
               <>
                 <Button
@@ -34,7 +52,15 @@ export const Share = (): JSX.Element => {
                   height="40px"
                   variant="secondary"
                   text="Open email"
-                  onClick={() => handleSendEmail(students, template)}
+                  onClick={() =>
+                    handleSendEmail({
+                      students,
+                      email: {
+                        subject: `${SUBJECT_PARAM_ID}${subject}`,
+                        body: `${BODY_PARAM_ID}`,
+                      },
+                    })
+                  }
                 />
                 <S.EmailWarning>
                   <p style={{ fontSize: 12, color: "#999" }}>
@@ -46,8 +72,6 @@ export const Share = (): JSX.Element => {
                 </S.EmailWarning>
               </>
             )}
-
-            {/* <EmailForm /> */}
           </S.LeftSection>
           <S.RightSection>
             <S.Title>Download</S.Title>

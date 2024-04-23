@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const FormContainer = styled.div`
+  margin-bottom: 80px;
   display: flex;
   flex-direction: column;
   gap: 20px;

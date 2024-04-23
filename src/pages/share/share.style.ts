@@ -35,7 +35,7 @@ export const RightSection = styled.div`
 export const Title = styled.p`
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
 `;
 
 export const EmailWarning = styled.div`
