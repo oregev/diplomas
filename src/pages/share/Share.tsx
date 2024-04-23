@@ -56,8 +56,8 @@ export const Share = (): JSX.Element => {
                     handleSendEmail({
                       students,
                       email: {
-                        subject: `${SUBJECT_PARAM_ID}${subject}`,
-                        body: `${BODY_PARAM_ID}`,
+                        subject: `${SUBJECT_PARAM_ID}${email.subject}`,
+                        body: `${BODY_PARAM_ID}${email.body}`,
                       },
                     })
                   }
