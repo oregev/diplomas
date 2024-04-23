@@ -1,0 +1,16 @@
+export { UploadIcon } from "./UploadIcon";
+export { CloseIcon } from "./CloseIcon";
+export { ConfirmIcon } from "./ConfirmIcon";
+export { ArrowIcon } from "./ArrowIcon";
+export { AddIcon } from "./AddIcon";
+export { FolderIcon } from "./FolderIcon";
+export { ChevronIcon } from "./ChevronIcon";
+export { EditIcon } from "./EditIcon";
+export { TrashIcon } from "./TrashIcon";
+export { SelectIcon } from "./SelectIcon";
+export { MenuIcon } from "./MenuIcon";
+export { HomeIcon } from "./HomeIcon";
+export { ShareIcon } from "./ShareIcon";
+export { PreviewIcon } from "./PreviewIcon";
+export { AlertIcon } from "./AlertIcon";
+export { ErrorIcon } from "./ErrorIcon";
