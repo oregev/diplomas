@@ -23,7 +23,9 @@ export const Share = (): JSX.Element => {
       ))
     : [];
 
-  const date = format(new Date(template?.start ?? ""), "MMMM, yyyy", { locale: he });
+  const date = template?.start
+    ? format(new Date(template?.start ?? ""), "MMMM, yyyy", { locale: he })
+    : "";
   const subject = `${SUBJECT_PREFIX} ${template?.courseName} ${date} - ${template?.lecturer}`;
 
   const [email, setEmail] = useState<{
