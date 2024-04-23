@@ -23,9 +23,10 @@ export const handleDownloadPdf = async (
 };
 
 const getHref = (student: IStudent, subject: string, body: string) => {
-  const email = `${BASE}${student.email}`;
-  const params = `${subject}&${body}`;
-  return `${email}?${params}`;
+  const email = BASE + student.email;
+  const params = subject + "&" + body;
+  console.log(email + "?" + params);
+  return email + "?" + params;
 };
 
 export const handleSendEmail = ({
