@@ -11,7 +11,7 @@ export const LeftSection = styled.div`
   position: relative;
   flex: 1;
   height: 500px;
-  border-right: 1px solid ${({ theme }) => theme.border};
+  border-inline-end: 1px solid ${({ theme }) => theme.border};
   display: flex;
   align-items: center;
   justify-content: center;

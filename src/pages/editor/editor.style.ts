@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 export const LeftSection = styled.div`
   width: 100%;
-  border-right: 1px solid ${({ theme }) => theme.border};
+  border-inline-end: 1px solid ${({ theme }) => theme.border};
   display: flex;
   justify-content: center;
   overflow-y: auto;

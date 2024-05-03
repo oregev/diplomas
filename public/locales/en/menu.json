@@ -5,5 +5,14 @@
   "preview": "preview",
   "share": "share",
   "darkMode": "dark mode",
-  "language": "language"
+  "language": "language",
+  "logout": "logout",
+  "logoutModal": {
+    "title": "Are you sure?",
+    "content": "Confirming this will disconnect you!",
+    "buttons": {
+      "cancel": "cancel",
+      "logout": "logout"
+    }
+  }
 }

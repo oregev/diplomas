@@ -135,7 +135,11 @@ export const Editor = (): JSX.Element => {
             <S.NoDataItem>
               <p>{t("errors.courses.title")}</p>
             </S.NoDataItem>
-            <Link text={t("errors.courses.content")} to={`/${AppRoutes.HOME}`} />
+            <Link
+              variant="secondary"
+              text={t("errors.courses.content")}
+              to={`/${AppRoutes.HOME}`}
+            />
           </S.NoDataItemContainer>
         ) : (
           <>

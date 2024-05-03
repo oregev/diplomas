@@ -36,16 +36,7 @@ export const TagsContainer = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-
-  [dir="rtl"] & {
-    justify-content: flex-end;
-  }
-
-  [dir="rtl"] & {
-    justify-content: flex-start;
-    flex-direction: row-reverse;
-  }
-
+  justify-content: flex-end;
   gap: 10px;
 `;
 
@@ -56,7 +47,7 @@ export const Tag = styled.div<{ $isOn: boolean }>`
   color: white;
   font-size: 12px;
   background: ${({ $isOn }) => ($isOn ? "green" : "red")};
-
+  text-transform: capitalize;
   display: flex;
   align-items: center;
   justify-content: center;

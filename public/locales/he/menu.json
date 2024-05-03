@@ -5,5 +5,14 @@
   "preview": "תצוגה",
   "share": "שיתוף",
   "darkMode": "מצב לילה",
-  "language": "שפה"
+  "language": "שפה",
+  "logout": "התנתקות",
+  "logoutModal": {
+    "title": "אישור התנתקות",
+    "content": "!אישור ינתק אותך מהאפליקציה",
+    "buttons": {
+      "cancel": "ביטול",
+      "logout": "ניתוק"
+    }
+  }
 }

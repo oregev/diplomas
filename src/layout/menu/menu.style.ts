@@ -64,4 +64,5 @@ export const ActionsContainer = styled.div`
 
 export const Mode = styled.p`
   opacity: 0.7;
+  text-transform: capitalize;
 `;
