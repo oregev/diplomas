@@ -36,7 +36,7 @@ export const darkTheme: Theme = {
   icon: "rgba(255, 255, 255, 0.8)",
   background: "rgba(66, 66, 66, 0.7)",
   invertedBackground: "rgba(255, 255, 255, 0.2)",
-  boxShadow: "0 0 4px rgba(0, 0, 0, 1)",
+  boxShadow: "2px 1px 2px 1px rgba(0, 0, 0, 0.5)",
   border: "rgba(255, 255, 255, 0.2)",
   modalOverlay: "rgba(0, 0, 0, 0.35)",
   filledButton: "rgba(255, 255, 255, 0.9)",
