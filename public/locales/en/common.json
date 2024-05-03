@@ -1,0 +1,17 @@
+{
+  "deleteModal": {
+    "title": "are you sure?",
+    "content": "this action is permanent!",
+    "buttons": {
+      "cancel": "cancel",
+      "delete": "delete"
+    }
+  },
+  "buttons": {
+    "cancel": "cancel",
+    "confirm": "confirm",
+    "generate": "generate",
+    "clear": "clear"
+  },
+  "dropZone": "drop your file her..."
+}

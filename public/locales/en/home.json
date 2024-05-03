@@ -1,0 +1,22 @@
+{
+  "errors": {
+    "courses": {
+      "title": "No Courses created!",
+      "content": "Add new course in the action menu above"
+    },
+    "templates": {
+      "title": "No Templates created!",
+      "content": "Add new template in the editor screen"
+    }
+  },
+  "title": {
+    "confirm": "confirm edit",
+    "edit": "edit name",
+    "delete": "delete course"
+  },
+  "template": {
+    "select": "select",
+    "edit": "edit",
+    "delete": "delete"
+  }
+}

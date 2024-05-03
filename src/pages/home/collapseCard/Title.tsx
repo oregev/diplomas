@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useTheme } from "styled-components";
 import { EditIcon, SelectIcon, TrashIcon } from "assets/icons";
-import * as S from "./collapseCard.style";
 import { Input } from "components/input";
+import * as S from "./collapseCard.style";
 
 interface TitleProps {
   name: string;
@@ -12,6 +13,7 @@ interface TitleProps {
 
 export const Title = ({ name, onRename, onDelete }: TitleProps): JSX.Element => {
   const theme = useTheme();
+  const { t } = useTranslation("home", { keyPrefix: "title" });
   const [isEdit, setIsEdit] = useState<boolean>(false);
 
   return isEdit ? (
@@ -26,7 +28,7 @@ export const Title = ({ name, onRename, onDelete }: TitleProps): JSX.Element => 
         onChange={(e) => onRename(e.target.value)}
       />
       <S.ClickContainer
-        title="confirm edit"
+        title={t("confirm")}
         onClick={(e) => {
           e.stopPropagation();
           setIsEdit(false);
@@ -39,7 +41,7 @@ export const Title = ({ name, onRename, onDelete }: TitleProps): JSX.Element => 
     <S.TitleContainer>
       <S.Title>{name}</S.Title>
       <S.ClickContainer
-        title="edit name"
+        title={t("edit")}
         style={{ marginInlineEnd: 5 }}
         onClick={(e) => {
           e.stopPropagation();
@@ -49,7 +51,7 @@ export const Title = ({ name, onRename, onDelete }: TitleProps): JSX.Element => 
         <EditIcon width={18} height={18} fill={theme.icon} />
       </S.ClickContainer>
       <S.ClickContainer
-        title="delete course"
+        title={t("delete")}
         onClick={(e) => {
           e.stopPropagation();
           onDelete();

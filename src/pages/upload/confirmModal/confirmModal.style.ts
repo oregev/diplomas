@@ -9,14 +9,21 @@ export const BodyContainer = styled.div`
   flex-direction: column;
 `;
 
-export const Title = styled.p`
-  font-weight: 500;
+export const TitleContainer = styled.div`
+  width: 100%;
   margin-bottom: 20px;
+  padding: 10px 8px;
+  background: rgba(0, 0, 0, 0.05);
+`;
+
+export const Title = styled.p`
+  font-size: 14px;
 `;
 
 export const Content = styled.p`
-  text-align: center;
   font-size: 14px;
+  font-weight: bold;
+  text-align: center;
 `;
 
 export const FooterContainer = styled.div`

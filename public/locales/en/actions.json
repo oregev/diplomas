@@ -1,0 +1,21 @@
+{
+  "tags": {
+    "template": "template",
+    "students": "students",
+    "verify": "verify"
+  },
+  "folder": {
+    "trigger": "new folder",
+    "modal": {
+      "title": "create mew course",
+      "label": "course name",
+      "placeholder": "add name...",
+      "error": "course name exists!",
+      "warning": "Courses are like Folders in Diplomas and are here to help you stay organized.",
+      "buttons": {
+        "cancel": "cancel",
+        "create": "create"
+      }
+    }
+  }
+}

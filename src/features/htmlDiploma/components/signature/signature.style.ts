@@ -8,8 +8,8 @@ export const FooterContainer = styled.div`
 `;
 
 export const SignatureContainer = styled.div`
-  max-width: 190px;
-  margin-top: 30px;
+  max-width: 160px;
+  margin-top: 10px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -22,8 +22,9 @@ export const SignatureImage = styled.img`
 `;
 
 export const SignatureText = styled.div`
+  font-size: 12px;
   word-break: break-all;
   white-space: normal;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   border-top: 1px solid;
 `;

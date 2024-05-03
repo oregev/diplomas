@@ -18,9 +18,9 @@ export const Body = ({ student, metaData }: HtmlDiplomaBodyProps): JSX.Element =
 
   return (
     <S.BodyContainer>
-      <p style={{ fontSize: 18, marginBottom: 10 }}>{text.title[student.gender]}</p>
-      <S.BoldText style={{ marginBottom: 26 }}>{metaData.courseName}</S.BoldText>
-      <p style={{ fontSize: 18, marginBottom: 18 }}>
+      <p style={{ fontSize: 18, marginBottom: 8 }}>{text.title[student.gender]}</p>
+      <S.BoldText style={{ marginBottom: 14 }}>{metaData.courseName}</S.BoldText>
+      <p style={{ fontSize: 18, marginBottom: 12 }}>
         {text.duration.pre} {metaData.courseDuration} {text.duration.post}
       </p>
       <S.DatesContainer>

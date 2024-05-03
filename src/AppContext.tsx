@@ -19,15 +19,15 @@ interface AppContextObj {
     course: string | null;
     id: string | null;
   };
+  toggleTheme: () => void;
+  setStudents: Dispatch<SetStateAction<IStudent[]>>;
+  setVerified: Dispatch<SetStateAction<boolean>>;
   setSelectedTemplate: Dispatch<
     SetStateAction<{
       course: string | null;
       id: string | null;
     }>
   >;
-  setStudents: Dispatch<SetStateAction<IStudent[]>>;
-  setVerified: Dispatch<SetStateAction<boolean>>;
-  toggleTheme: () => void;
 }
 
 export const AppContext = createContext({} as AppContextObj);

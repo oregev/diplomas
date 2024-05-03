@@ -7,6 +7,7 @@ import { DiplomaMetaData } from "types/common.types";
 import { DeleteModal } from "features/deleteModal";
 import { Link } from "components/link";
 import * as S from "./templateCard.style";
+import { useTranslation } from "react-i18next";
 
 interface TemplateCardProps {
   courseId: string;
@@ -22,6 +23,7 @@ export const TemplateCard = ({
   onDelete,
 }: TemplateCardProps): JSX.Element => {
   const theme = useTheme();
+  const { t } = useTranslation("home", { keyPrefix: "template" });
   const period = getPeriod(template.start ?? "");
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -34,12 +36,12 @@ export const TemplateCard = ({
     <S.TemplateCardContainer>
       <S.Title>{period}</S.Title>
       <S.ActionBar>
-        <S.IconContainer title="select">
+        <S.IconContainer title={t("select")}>
           <Link to={`/${AppRoutes.UPLOAD}`} onClick={() => onEdit(template.id)}>
             <SelectIcon width={18} height={18} stroke={theme.icon} />
           </Link>
         </S.IconContainer>
-        <S.IconContainer title="edit">
+        <S.IconContainer title={t("edit")}>
           <Link
             to={`/${AppRoutes.EDITOR}/${courseId}/${template.id}`}
             onClick={() => onEdit(template.id)}
@@ -48,7 +50,7 @@ export const TemplateCard = ({
           </Link>
         </S.IconContainer>
         <S.IconContainer
-          title="delete"
+          title={t("delete")}
           onClick={(e) => {
             e.stopPropagation();
             setIsOpen(true);

@@ -45,7 +45,12 @@ export const IconContainer = styled.div<{ $top?: number }>`
 `;
 
 export const Range = styled.input`
-  width: 400px;
+  width: 380px;
+`;
+
+export const Duration = styled.span`
+  font-size: 12px;
+  margin-inline-start: 5px;
 `;
 
 export const RangeIconContainer = styled.div`

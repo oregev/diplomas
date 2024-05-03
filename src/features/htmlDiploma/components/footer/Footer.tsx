@@ -5,7 +5,7 @@ import * as S from "./footer.style";
 export const Footer = (): JSX.Element => (
   <>
     <S.CloserContainer>
-      <p style={{ fontSize: 12, marginBottom: 0 }}>{text.text}</p>
+      <p style={{ fontSize: 12 }}>{text.text}</p>
     </S.CloserContainer>
     <S.FooterContainer>
       <S.FooterImage src={footerImage} />

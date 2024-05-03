@@ -1,0 +1,53 @@
+{
+  "form": {
+    "name": {
+      "label": "שם הקורס",
+      "placeholder": "הוספת שם.."
+    },
+    "duration": "תקופת הקורס",
+    "dates": {
+      "start": "תאריך התחלה",
+      "end": "תאריך סיום"
+    },
+    "lecturer": {
+      "label": "מרצה",
+      "placeholder": "הוספת שם מרצה.."
+    },
+    "course": {
+      "label": "תיקייה",
+      "placeholder": "בחירת תיקייה"
+    },
+    "checkbox": {
+      "title": "בחירת התבנית הנוכחית",
+      "warning": "סימון תיבה זו יבחר את התבנית לאחר היציאה וינווט לעמוד העלאות."
+    },
+    "signature": "חתימה",
+    "buttons": {
+      "clear": "נקה",
+      "generate": "צור",
+      "update": "עדכן"
+    }
+  },
+  "errors": {
+    "courses": {
+      "title": "לא נוצרו תיקיות!",
+      "content": "הקלק ליצירת תיקייה חדשה"
+    }
+  },
+  "confirmModal": {
+    "title": "אישור יצירת תבנית.",
+    "name": "שם",
+    "duration": "תקופה",
+    "start": "מתחיל",
+    "end": "מסתיים",
+    "lecturer": "מרצה",
+    "course": "תיקייה",
+    "use": "השתמש בתבנית זו",
+    "signature": "חתימה",
+    "buttons": {
+      "cancel": "בטל",
+      "generate": "צור",
+      "update": "עדכן"
+    }
+  }
+}

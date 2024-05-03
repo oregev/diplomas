@@ -1,0 +1,16 @@
+{
+  "download": {
+    "title": "download",
+    "warning": "you have {{count}} diploma to download!",
+    "button": "download"
+  },
+  "email": {
+    "title": "email",
+    "form": {
+      "subject": "subject",
+      "body": "body"
+    },
+    "button": "open email",
+    "warning": "clicking this will open {{count}} email window."
+  }
+}

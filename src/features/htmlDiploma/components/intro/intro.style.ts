@@ -7,20 +7,20 @@ export const OpeningContainer = styled.div`
 
 export const Pre = styled.div`
   font-size: 18px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 `;
 
 export const Title = styled.div`
-  font-size: 55px;
-  margin-bottom: 12px;
+  font-size: 50px;
+  margin-bottom: 10px;
 `;
 
 export const Name = styled.div`
-  font-size: 40px;
-  margin-bottom: 12px;
+  font-size: 38px;
+  margin-bottom: 10px;
 `;
 
 export const Id = styled.div`
-  font-size: 16px;
-  margin-bottom: 1cm;
+  font-size: 14px;
+  margin-bottom: 10px;
 `;

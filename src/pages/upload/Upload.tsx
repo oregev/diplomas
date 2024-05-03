@@ -1,4 +1,5 @@
 import { ChangeEvent, DragEvent, useContext, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { AppRoutes } from "router";
 import { AppContext, IStudent } from "AppContext";
 import { AddIcon } from "assets/icons";
@@ -14,6 +15,7 @@ import { getIsValidEmail, getStudents } from "./upload.utils";
 import * as S from "./upload.style";
 
 export const Upload = (): JSX.Element => {
+  const { t } = useTranslation("upload");
   const { students, setStudents, setVerified } = useContext(AppContext);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isConfirmOpen, setIsConfirmOpen] = useState<boolean>(false);
@@ -95,7 +97,7 @@ export const Upload = (): JSX.Element => {
         {students.length > 0 && (
           <S.LinkContainer>
             <Link
-              text="generate"
+              text={t("generate")}
               to={isGenerateDisabled ? "" : `/${AppRoutes.PREVIEW}`}
               state={{ index: 3 }}
               variant={isGenerateDisabled ? "disabled" : "secondary"}
@@ -114,8 +116,8 @@ export const Upload = (): JSX.Element => {
       </Modal>
       <ConfirmModal
         isOpen={isConfirmOpen}
-        title="Are you sure?"
-        content="Clicking confirm will clean the upload table!"
+        title={t("confirmModal.title")}
+        content={t("confirmModal.content")}
         onCancel={() => setIsConfirmOpen(false)}
         onConfirm={handleConfirm}
       />

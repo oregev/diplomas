@@ -1,6 +1,6 @@
 import { getCoreRowModel, useReactTable } from "@tanstack/react-table";
 import { TableBody, TableHead } from "components/table";
-import { getColumns } from "./studentsTable.config";
+import { useColumns } from "./studentsTable.config";
 import { IStudent } from "AppContext";
 import * as S from "./studentsTable.style";
 
@@ -11,7 +11,7 @@ interface StudentsTableProps {
 
 export const StudentsTable = ({ students, onApprove }: StudentsTableProps) => {
   const table = useReactTable({
-    columns: getColumns(onApprove),
+    columns: useColumns(onApprove),
     data: students,
     getCoreRowModel: getCoreRowModel(),
   });

@@ -7,8 +7,7 @@ export const FooterContainer = styled.div`
 `;
 
 export const FooterImage = styled.img`
-  width: 500px;
-  height: 30px;
+  width: 100%;
 `;
 
 export const CloserContainer = styled.div`

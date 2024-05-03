@@ -1,8 +1,8 @@
 import { StylesProvider } from "./stylesProvider";
-import { Header } from "./Header";
-import { ActionBar } from "./ActionBar";
-import { Body } from "./Body";
-import { Footer } from "./Footer";
+import { Header } from "./header";
+import { ActionBar } from "./actionBar";
+import { Body } from "./body";
+import { Footer } from "./footer";
 
 export const Layout = (): JSX.Element => (
   <StylesProvider>

@@ -18,7 +18,14 @@ export const MenuContainer = styled.div`
   position: absolute;
   z-index: 1;
   top: 50px;
-  left: -10px;
+
+  [dir="ltr"] & {
+    left: -10px;
+  }
+  [dir="rtl"] & {
+    right: -10px;
+  }
+
   padding: 10px 10px 0 10px;
 
   background: ${({ theme }) => theme.body};
@@ -53,4 +60,8 @@ export const ActionsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+
+export const Mode = styled.p`
+  opacity: 0.7;
 `;

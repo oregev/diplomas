@@ -14,35 +14,3 @@ export const NoDataWrapper = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
-export const LeftSection = styled.div`
-  height: 80%;
-  width: 100%;
-  border-right: 1px solid ${({ theme }) => theme.border};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const RightSection = styled.div`
-  height: 80%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const Title = styled.p`
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 80px;
-`;
-
-export const EmailWarning = styled.div`
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  gap: 3px;
-
-  margin-bottom: 50px;
-`;

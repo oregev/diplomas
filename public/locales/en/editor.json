@@ -1,0 +1,53 @@
+{
+  "form": {
+    "name": {
+      "label": "template",
+      "placeholder": "add name.."
+    },
+    "duration": "duration",
+    "dates": {
+      "start": "start date",
+      "end": "end date"
+    },
+    "lecturer": {
+      "label": "lecturer",
+      "placeholder": "add lecturer name.."
+    },
+    "course": {
+      "label": "course",
+      "placeholder": "select a course"
+    },
+    "checkbox": {
+      "title": "use this template",
+      "warning": "when checked you will be moved to uploads when generating a template"
+    },
+    "signature": "signature",
+    "buttons": {
+      "clear": "clear",
+      "generate": "generate",
+      "update": "update"
+    }
+  },
+  "errors": {
+    "courses": {
+      "title": "No courses yet..",
+      "content": "add courses here"
+    }
+  },
+  "confirmModal": {
+    "title": "create this course",
+    "name": "course name",
+    "duration": "duration",
+    "start": "starts at",
+    "end": "ends at",
+    "lecturer": "lecturer",
+    "course": "course",
+    "use": "use template",
+    "signature": "signature",
+    "buttons": {
+      "cancel": "cancel",
+      "generate": "generate",
+      "update": "update"
+    }
+  }
+}

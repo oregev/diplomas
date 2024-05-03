@@ -1,32 +1,5 @@
 import styled from "styled-components";
 
-export const HeaderContainer = styled.div`
-  height: 60px;
-  padding: 0 20px;
-  box-shadow: ${({ theme }) => theme.boxShadow};
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-export const BodyContainer = styled.div`
-  height: calc(100vh - 180px);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const FooterContainer = styled.div`
-  height: 60px;
-  padding-inline: 20px;
-  box-shadow: ${({ theme }) => theme.boxShadow};
-
-  display: flex;
-  align-items: center;
-`;
-
 export const ActionBarContainer = styled.div`
   width: 100%;
   padding: 20px 20px 10px 20px;
@@ -63,7 +36,16 @@ export const TagsContainer = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+
+  [dir="rtl"] & {
+    justify-content: flex-end;
+  }
+
+  [dir="rtl"] & {
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+  }
+
   gap: 10px;
 `;
 

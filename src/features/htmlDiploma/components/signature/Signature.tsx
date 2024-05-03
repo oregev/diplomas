@@ -10,7 +10,7 @@ interface SignatureProps {
 export const Signature = ({ signature, lecturer }: SignatureProps): JSX.Element => (
   <S.FooterContainer>
     <S.SignatureContainer>
-      {signature && <S.SignatureImage src={signature} />}
+      {signature ? <S.SignatureImage src={signature} /> : <div style={{ height: 50 }} />}
       <S.SignatureText>{lecturer}</S.SignatureText>
     </S.SignatureContainer>
     <S.SignatureContainer>

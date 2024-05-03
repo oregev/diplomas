@@ -38,8 +38,12 @@ export const LinkContainer = styled.div`
 
 export const AddContainer = styled.div`
   position: fixed;
-
-  left: 50px;
+  [dir="ltr"] & {
+    left: 50px;
+  }
+  [dir="rtl"] & {
+    right: 50px;
+  }
   bottom: 110px;
   border-radius: 50%;
   width: 60px;

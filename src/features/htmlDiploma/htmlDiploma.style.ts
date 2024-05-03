@@ -1,14 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: fit-content;
-  padding: 20px 10px;
+  padding: 10px;
+  max-width: 500px;
 
   border-radius: 10px;
   font-family: Rubik-regular;
   background: white;
   color: rgba(33, 33, 33, 1);
   box-shadow: ${({ theme }) => theme.boxShadow};
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const HeaderContainer = styled.div`
@@ -18,6 +22,6 @@ export const HeaderContainer = styled.div`
 `;
 
 export const HeaderImage = styled.img`
-  width: 500px;
+  width: 100%;
   height: 80px;
 `;

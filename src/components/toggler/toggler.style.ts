@@ -38,4 +38,6 @@ export const Toggler = styled.input`
   &:checked:before {
     left: 22px;
   }
+
+  cursor: pointer;
 `;

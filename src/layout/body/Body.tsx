@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import * as S from "./layout.style";
+import * as S from "./body.style";
 
 export const Body = (): JSX.Element => (
   <S.BodyContainer>

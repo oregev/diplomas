@@ -1,0 +1,34 @@
+{
+  "generate": "generate",
+  "confirmModal": {
+    "title": "are you sure?",
+    "content": "clicking confirm will clean the upload table!"
+  },
+  "form": {
+    "title": "add student",
+    "firstName": "first name",
+    "lastName": "last name",
+    "id": {
+      "label": "student id",
+      "error": "invalid ID, IDs must be 8-9 digits long!"
+    },
+    "grade": "grade",
+    "email": {
+      "label": "email",
+      "error": "invalid email, must have `@` and `.`!"
+    },
+    "gender": {
+      "label": "gender",
+      "female": "female",
+      "male": "male"
+    }
+  },
+  "table": {
+    "last": "last name",
+    "first": "first name",
+    "id": "ID",
+    "grade": "grade",
+    "email": "email",
+    "gender": "gender"
+  }
+}

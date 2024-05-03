@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const BodyContainer = styled.div`
   min-width: 300px;
   max-width: 1000px;
+  padding-inline-start: 8px;
   overflow-x: auto;
   display: flex;
   flex-direction: column;

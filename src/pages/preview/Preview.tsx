@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useTheme } from "styled-components";
 import { AppRoutes } from "router";
 import { AppContext } from "AppContext";
@@ -12,6 +13,7 @@ import * as S from "./preview.style";
 
 export const Preview = (): JSX.Element => {
   const theme = useTheme();
+  const { t } = useTranslation("preview");
   const { getTemplate } = useTemplates();
   const [current, setCurrent] = useState(0);
   const { students, selectedTemplate } = useContext(AppContext);
@@ -33,13 +35,6 @@ export const Preview = (): JSX.Element => {
   return (
     <S.Container>
       <NoData template={template} students={students} />
-      {template && students.length > 0 && (
-        <S.CounterContainer>
-          <p style={{ marginInline: 20 }}>
-            {current + 1}/{students.length}
-          </p>
-        </S.CounterContainer>
-      )}
       {template && selectedTemplate.id && students.length > 0 && (
         <>
           <S.DiplomaContainer>
@@ -61,7 +56,7 @@ export const Preview = (): JSX.Element => {
               }}
               metaData={{
                 courseName: template?.courseName ?? "",
-                courseDuration: template?.courseDuration ?? 0,
+                courseDuration: template?.courseDuration ?? "",
                 start: template?.start ?? new Date().toString(),
                 end: template?.end ?? new Date().toString(),
                 period: template?.period ?? "",
@@ -80,7 +75,7 @@ export const Preview = (): JSX.Element => {
             </S.ButtonContainer>
           </S.DiplomaContainer>
           <S.FooterContainer>
-            <Link variant="secondary" text="Share diplomas" to={`/${AppRoutes.SHARE}`} />
+            <Link variant="secondary" text={t("share")} to={`/${AppRoutes.SHARE}`} />
           </S.FooterContainer>
         </>
       )}

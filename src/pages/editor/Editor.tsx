@@ -1,5 +1,6 @@
 import { ChangeEvent, DragEvent, useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { AppRoutes } from "router";
 import { AppContext } from "AppContext";
 import { createTemplate } from "api/template";
@@ -18,6 +19,7 @@ import * as S from "./editor.style";
 export const Editor = (): JSX.Element => {
   const { courses } = useCourses();
   const navigate = useNavigate();
+  const { t } = useTranslation("editor");
   const { getTemplate, updateTemplate } = useTemplates();
   const { courseId: cid, templateId: tid } = useParams();
   const { setSelectedTemplate } = useContext(AppContext);
@@ -118,7 +120,7 @@ export const Editor = (): JSX.Element => {
           student={mockStudent}
           metaData={{
             courseName: content.courseName ?? template?.courseName ?? "",
-            courseDuration: content.courseDuration ?? template?.courseDuration,
+            courseDuration: content.courseDuration ?? template?.courseDuration ?? "",
             start: content.start ?? template?.start ?? new Date().toString(),
             end: content.end ?? template?.end ?? new Date().toString(),
             period: content.period ?? template?.period ?? "",
@@ -131,9 +133,9 @@ export const Editor = (): JSX.Element => {
         {courses?.length === 0 ? (
           <S.NoDataItemContainer>
             <S.NoDataItem>
-              <p>No courses yet..</p>
+              <p>{t("errors.courses.title")}</p>
             </S.NoDataItem>
-            <Link text="add courses here" to={`/${AppRoutes.HOME}`} />
+            <Link text={t("errors.courses.content")} to={`/${AppRoutes.HOME}`} />
           </S.NoDataItemContainer>
         ) : (
           <>
@@ -146,7 +148,8 @@ export const Editor = (): JSX.Element => {
               onCourseChange={setCourseId}
             />
             <S.UploadContainer>
-              <Label htmlFor="courseName" content="Signature" />
+              {/** //! move to form */}
+              <Label htmlFor="signature" content={t("form.signature")} />
               <S.DropZoneContainer>
                 <DropZone onDrop={handleDrop} width={200} height={30} />
               </S.DropZoneContainer>

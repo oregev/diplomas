@@ -5,7 +5,7 @@ export type State = Omit<DiplomaMetaData, "id"> & { use: boolean };
 
 export const initialState: State = {
   courseName: null,
-  courseDuration: 0,
+  courseDuration: null,
   start: null,
   end: null,
   period: null,

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { ConfirmIcon, ErrorIcon } from "assets/icons";
 import { ICourse } from "api/courses";
 import { Button } from "components/button";
@@ -13,6 +14,7 @@ interface TemplatePreviewProps {
 }
 
 export const FolderModal = ({ courses, onClose, onCreate }: TemplatePreviewProps): JSX.Element => {
+  const { t } = useTranslation("actions", { keyPrefix: "folder.modal" });
   const [folderName, setFolderName] = useState<string>("");
 
   const isExist = !!courses?.find((course) => course.name === folderName);
@@ -20,17 +22,17 @@ export const FolderModal = ({ courses, onClose, onCreate }: TemplatePreviewProps
   return (
     <S.Container>
       <S.TitleContainer>
-        <S.Content>Create new course</S.Content>
+        <S.Content>{t("title")}</S.Content>
       </S.TitleContainer>
       <S.BodyContainer>
         <S.InputContainer>
-          <Label htmlFor="courseName" content="Course name" style={{ marginBottom: 3 }} />
+          <Label htmlFor="courseName" content={t("label")} style={{ marginBottom: 3 }} />
           <Input
             id="courseName"
             name="courseName"
             type="text"
             maxLength={100}
-            placeholder="Add name.."
+            placeholder={t("placeholder")}
             value={folderName}
             valid={!folderName || !isExist}
             onChange={(e) => setFolderName(e.target.value)}
@@ -45,16 +47,20 @@ export const FolderModal = ({ courses, onClose, onCreate }: TemplatePreviewProps
               <ErrorIcon width={20} height={20} stroke="red" />
             </S.IconContainer>
           )}
-          {isExist ? <S.Warning>course name exists</S.Warning> : <div style={{ height: "18px" }} />}
+          {isExist ? <S.Warning>{t("error")}</S.Warning> : <div style={{ height: "18px" }} />}
         </S.InputContainer>
-        <S.Helper>
-          Courses are like Folders in Diplomas and are here to help you stay organized.
-        </S.Helper>
+        <S.Helper>{t("warning")}</S.Helper>
       </S.BodyContainer>
       <S.FooterContainer>
-        <Button text="cancel" onClick={onClose} variant="base" width="100px" height="30px" />
         <Button
-          text="Create"
+          text={t("buttons.cancel")}
+          onClick={onClose}
+          variant="base"
+          width="100px"
+          height="30px"
+        />
+        <Button
+          text={t("buttons.create")}
           onClick={() => onCreate(folderName)}
           variant={!folderName || isExist ? "disabled" : "secondary"}
           width="100px"

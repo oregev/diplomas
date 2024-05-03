@@ -8,6 +8,10 @@ export const OpeningContainer = styled.div`
 export const BodyContainer = styled.div`
   text-align: center;
   padding-inline: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const GradeContainer = styled.div`
@@ -15,6 +19,10 @@ export const GradeContainer = styled.div`
   flex-direction: row-reverse;
   justify-content: center;
   gap: 4;
+
+  [dir="rtl"] & {
+    direction: ltr;
+  }
 `;
 
 export const DatesContainer = styled.div`

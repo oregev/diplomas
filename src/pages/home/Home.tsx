@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { AppContext } from "AppContext";
 import { useCourses } from "api/useCourses";
 import { useTemplates } from "api/useTemplates";
@@ -7,6 +8,7 @@ import { CollapseCard } from "./collapseCard";
 import * as S from "./home.style";
 
 export const Home = (): JSX.Element => {
+  const { t } = useTranslation("home", { keyPrefix: "errors" });
   const { courses, updateCourse, deleteCourse } = useCourses();
   const { deleteTemplate } = useTemplates();
   const { setSelectedTemplate } = useContext(AppContext);
@@ -36,8 +38,8 @@ export const Home = (): JSX.Element => {
         </S.CoursesContainer>
       ) : (
         <S.NoData>
-          <S.NoDataTitle>No Courses created!</S.NoDataTitle>
-          <S.NoDataContent>Add new course in the action menu above</S.NoDataContent>
+          <S.NoDataTitle>{t("courses.title")}</S.NoDataTitle>
+          <S.NoDataContent>{t("courses.content")}</S.NoDataContent>
           <S.IconContainer>
             <FolderIcon width={20} height={20} stroke="#fff" />
           </S.IconContainer>
@@ -45,8 +47,8 @@ export const Home = (): JSX.Element => {
       )}
       {courses.length > 0 && hasNoTemplates && (
         <S.NoData>
-          <S.NoDataTitle>No Templates created!</S.NoDataTitle>
-          <S.NoDataContent>Add new template in the editor screen</S.NoDataContent>
+          <S.NoDataTitle>{t("templates.title")}</S.NoDataTitle>
+          <S.NoDataContent>{t("templates.content")}</S.NoDataContent>
           <S.IconContainer>
             <AddIcon width={20} height={20} stroke="#fff" />
           </S.IconContainer>

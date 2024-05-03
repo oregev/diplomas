@@ -1,0 +1,17 @@
+{
+  "deleteModal": {
+    "title": "מחיקת תקייה",
+    "content": "התיקייה אינה ניתנת לשחזור!",
+    "buttons": {
+      "cancel": "ביטול",
+      "delete": "מחיקה"
+    }
+  },
+  "buttons": {
+    "cancel": "ביטול",
+    "confirm": "אישור",
+    "generate": "יצירה",
+    "clear": "ניקוי"
+  },
+  "dropZone": "קליטת קבצים..."
+}
