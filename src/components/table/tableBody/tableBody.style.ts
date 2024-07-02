@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const TBody = styled.tbody``;
+export const TBody = styled.tbody`
+  overflow-y: auto;
+`;
 
 export const TRow = styled.tr``;
 
